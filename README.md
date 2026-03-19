@@ -41,9 +41,45 @@ o	Power (VCC & GND) and appropriate resistors.
 3.	Run the simulation and observe the digits 0 to 9 appearing sequentially.
 
 ## Program:
+```
+ORG 0000H
+	UP: MOV P2, #0C0H
+	ACALL DELAY
+	MOV P2, #0F9H
+	ACALL DELAY
+	MOV P2, #0A4H
+	ACALL DELAY
+	MOV P2, #0B0H
+	ACALL DELAY
+	MOV P2, # 99H
+	ACALL DELAY
+	MOV P2, # 92H
+	ACALL DELAY
+	MOV P2, # 82H
+	ACALL DELAY
+	MOV P2, #0F8H
+	ACALL DELAY
+	MOV P2, #80H 
+	ACALL DELAY
+	MOV P2, #90H
+	ACALL DELAY
+
+
+DELAY: MOV R5, #10
+	H1: MOV R4, #180
+	H2: MOV R3, #255
+	H3:DJNZ R3,H3
+	DJNZ R4,H2
+	DJNZ R5,H1
+	RET
+	END
+
+```
 
 
 ## Output:
+<img width="1219" height="1011" alt="image" src="https://github.com/user-attachments/assets/6cb1b9ab-dfbf-4c99-817c-961e5996fded" />
+<img width="1784" height="1088" alt="image" src="https://github.com/user-attachments/assets/1fc48a32-7ada-4710-9c15-c0a3880a8251" />
 
 
 ## Result:
